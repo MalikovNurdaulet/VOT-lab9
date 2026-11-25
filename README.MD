@@ -153,6 +153,24 @@ errors.log  lab7  lab8  lab9  linux_lab  listing.txt  project  tasks.txt  tgbot
 <span style="color: #FFD700;">root@hiplet-123755:~#</span>
 
 
+
 </pre>
 
 
+```diff
++ root@hiplet-123755:~# ls
+  errors.log  lab7  lab8  lab9  linux_lab  listing.txt  project  tasks.txt  tgbot
++ root@hiplet-123755:~#
+```
+
+```console
+root@hiplet-123755:~# ls
+errors.log  lab7  lab8  lab9  linux_lab
+root@hiplet-123755:~#
+```
+
+```bash
+root@hiplet-123755:~# ls
+errors.log  lab7  lab8  lab9  linux_lab
+root@hiplet-123755:~#
+```
