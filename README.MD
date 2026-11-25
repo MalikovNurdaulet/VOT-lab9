@@ -146,10 +146,13 @@ lab9/
 - В качестве виртуальной машины использован облачный VPS-сервер с операционной системой Ubuntu 24.04 LTS. Доступ к серверу осуществляется удалённо по протоколу SSH.V
 - 2 vCPU · 4 GB RAM · 40 GB SSD · 200 Mbps
 
+
 <pre>
-<span style="color: green;">root@hiplet-123755:~#</span> ls
+<span style="color: #FFD700;">root@hiplet-123755:~#</span> ls
 errors.log  lab7  lab8  lab9  linux_lab  listing.txt  project  tasks.txt  tgbot
-<span style="color: green;">root@hiplet-123755:~#</span>
+<span style="color: #FFD700;">root@hiplet-123755:~#</span>
+
+
 </pre>
 
 
