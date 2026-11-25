@@ -381,9 +381,9 @@ root@hiplet-123755:~/lab9# docker compose logs app
     app-1  | Шымкент      3   552000
 
 root@hiplet-123755:~/lab9# docker compose images
-CONTAINER           REPOSITORY          TAG                 PLATFORM            IMAGE ID            SIZE                CREATED
-lab9-app-1          lab9-app            latest              linux/amd64         9c937f80ec07        431MB               4 minutes ago
-lab9-db-1           postgres            17                  linux/amd64         3b0cda93be7c        640MB               4 weeks ago
+    CONTAINER           REPOSITORY          TAG                 PLATFORM            IMAGE ID            SIZE                CREATED
+    lab9-app-1          lab9-app            latest              linux/amd64         9c937f80ec07        431MB               4 minutes ago
+    lab9-db-1           postgres            17                  linux/amd64         3b0cda93be7c        640MB               4 weeks ago
 ```
 
 
@@ -690,8 +690,46 @@ root@hiplet-123755:~/lab9# docker compose run --rm -e GROUP_BY=product app
     Наушники      4   101000
 ```
 
-### Шаг 
-```console
 
-```
 
+
+## 9. Контрольные вопросы 
+### ❓1. Чем Docker Compose отличается от Dockerfile? 
+- **Dockerfile** описывает процесс сборки образа приложения
+- **Docker Compose** управляет запуском и взаимодействием контейнеров через compose.yaml
+
+### ❓2. Что описывает раздел services? 
+- сервисы приложения
+- образы
+- переменные окружения
+- сетевые настройки
+- параметры запуска
+
+### ❓3. Чем build отличается от image? 
+- **build** собирает образ на основе Dockerfile
+- **image** использует готовый Docker-образ
+
+### ❓4. Почему приложение подключается к db, а не к localhost? 
+- **Docker Compose** автоматически создаёт общую сеть
+- Адрес db указывает на контейнер PostgreSQL
+
+### ❓5. Зачем нужен healthcheck? 
+- проверяет состояние и готовность сервиса
+
+### ❓6. Чем depends_on отличается от healthcheck? 
+- **depends_on** определяет зависимости и порядок запуска сервисов
+- **healthcheck** проверяет их работоспособность.
+
+### ❓7. Что происходит при docker compose down? 
+- Команда останавливает и удаляет контейнеры и сети проекта. Именованные тома и образы сохраняются
+
+### ❓8. Чем docker compose down -v отличается от обычного down? 
+- Удаляет именованные тома, объявленные в конфигурации проекта, и подключённые анонимные тома
+- В результате данные PostgreSQL, хранящиеся в томе pgdata, будут потеряны
+
+### ❓9. Почему init.sql не выполняется при каждом запуске? 
+- Файл **init.sql** выполняется только при первой инициализации пустого каталога данных
+
+### ❓10. В чём отличие docker compose run от docker compose exec?
+- **docker compose run** создаёт новый контейнер сервиса для выполнения отдельной задачи
+- **docker compose exec** выполняет команду внутри уже работающего контейнера без создания нового
